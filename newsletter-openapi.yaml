@@ -25,7 +25,7 @@ info:
     email: admin@newsletter.com
 
 servers:
-  - url: http://localhost:8080
+  - url: http://localhost:9000
     description: Local development server
 
 security:
