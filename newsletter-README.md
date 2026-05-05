@@ -2,24 +2,6 @@
 
 A secure REST API built with **Java 17** and **Spring Boot 3.2** for managing mailing lists, subscribers, and email campaigns. Campaigns are scheduled for future delivery and sending is simulated via structured log output — no real email service required.
 
----
-
-## Table of Contents
-- [Tech Stack](#tech-stack)
-- [Features](#features)
-- [Project Structure](#project-structure)
-- [Setup & Run](#setup--run)
-- [Authentication](#authentication)
-- [API Endpoints](#api-endpoints)
-- [Swagger UI](#swagger-ui)
-- [Campaign Lifecycle](#campaign-lifecycle)
-- [Simulated Email Sending](#simulated-email-sending)
-- [Running Tests](#running-tests)
-- [Postman Collection](#postman-collection)
-- [Environment Variables](#environment-variables)
-
----
-
 ## Tech Stack
 
 | Layer       | Technology                                    |
@@ -146,7 +128,7 @@ Content-Type: application/json
 
 ### Step 2 — Login
 ```http
-POST http://localhost:8080/api/auth/login
+POST http://localhost:9000/api/auth/login
 Content-Type: application/json
 
 {
@@ -295,29 +277,6 @@ Once the application is running:
 5. All secured endpoints are now accessible
 
 The `openapi.yaml` file in the project root can be imported into Swagger Editor at [editor.swagger.io](https://editor.swagger.io) or into Postman via *Import → OpenAPI*.
-
----
-
-## Campaign Lifecycle
-
-```
-Create Campaign
-      │
-      ▼
-   DRAFT ──────────────────► SCHEDULED
-      │                           │
-      │   (scheduledAt reached)   │
-      │                           ▼
-      │                        SENT ✓
-      │
-      └──────────────────────► CANCELLED (manual)
-```
-
-**Rules:**
-- New campaigns always start as **DRAFT**
-- `scheduledAt` must be strictly in the future — past timestamps return `400 Bad Request`
-- Only DRAFT and SCHEDULED campaigns can be edited or deleted
-- SENT campaigns are read-only — they cannot be modified or deleted
 
 ---
 
