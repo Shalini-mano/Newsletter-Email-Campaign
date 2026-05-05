@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.newsletter.controller.MailingListControllerTest
+-------------------------------------------------------------------------------
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.748 s -- in com.newsletter.controller.MailingListControllerTest
