@@ -106,7 +106,7 @@ mvn clean package -DskipTests
 mvn spring-boot:run
 ```
 
-API available at **`http://localhost:8080`**
+API available at **`http://localhost:9000`**
 
 ---
 
@@ -116,7 +116,7 @@ All endpoints except `/api/auth/**` require a JWT token.
 
 ### Step 1 — Register
 ```http
-POST http://localhost:8080/api/auth/register
+POST http://localhost:9000/api/auth/register
 Content-Type: application/json
 
 {
@@ -265,12 +265,12 @@ Once the application is running:
 
 | URL | Description |
 |-----|-------------|
-| **`http://localhost:8080/swagger-ui.html`** | Interactive Swagger UI |
-| `http://localhost:8080/api-docs`            | Raw OpenAPI JSON       |
-| `http://localhost:8080/api-docs.yaml`       | Raw OpenAPI YAML       |
+| **`http://localhost:9000/swagger-ui.html`** | Interactive Swagger UI |
+| `http://localhost:9000/api-docs`            | Raw OpenAPI JSON       |
+| `http://localhost:9000/api-docs.yaml`       | Raw OpenAPI YAML       |
 
 **How to use Swagger UI:**
-1. Open `http://localhost:8080/swagger-ui.html`
+1. Open `http://localhost:9000/swagger-ui.html`
 2. Call `POST /api/auth/register` to create an account
 3. Call `POST /api/auth/login` to get your token
 4. Click **Authorize 🔒** and paste your token (no "Bearer" prefix needed in the UI)
